@@ -1,14 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Register from "../Components/Main/Register";
 import Login from "../Components/Main/Login";
 import Devices from "../Components/Main/Devices";
 class Routes extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render(props) {
+  render() {
     return (
       <Switch>
         <Route path="/Register" component={Register} />

@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
-import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./Routes/Routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+function App(props) {
+  console.log("app page = " + props.value);
   return (
     <Router>
+      {props.history}
       <div className="App">
         <NavBar />
         <Routes />
