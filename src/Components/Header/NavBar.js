@@ -1,5 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
+
+const LOGOUT = gql`
+  mutation {
+    logout
+  }
+`;
 
 class NavBar extends React.Component {
   render(props) {
@@ -16,6 +24,24 @@ class NavBar extends React.Component {
             <li>
               <Link to="/Devices">Devices</Link>
             </li>
+            <li>
+              <Mutation mutation={LOGOUT}>
+                {logout => {
+                  return (
+                    <button
+                      onClick={async () => {
+                        const response = await logout();
+                        if (response.data.logout) {
+                          this.props.history.push("/Register");
+                        }
+                      }}
+                    >
+                      Logout
+                    </button>
+                  );
+                }}
+              </Mutation>
+            </li>
           </ul>
         </nav>
       </header>
@@ -23,4 +49,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
