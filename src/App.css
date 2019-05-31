@@ -11,3 +11,8 @@ li {
   display: inline;
   margin: 20px;
 }
+
+.device {
+  display: flex;
+  justify-content: space-between;
+}
