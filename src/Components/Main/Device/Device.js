@@ -8,7 +8,16 @@ import { RemoveDevice } from "./RemoveDevice";
 export default class Device extends React.Component {
   render() {
     // console.log("device component = " + this.props.device);
-    const { id, name, status, device_id, temp, location } = this.props.device;
+    const {
+      id,
+      name,
+      status,
+      device_id,
+      temp,
+      location,
+      ctemp,
+      human
+    } = this.props.device;
     return (
       <div className="device" key={id}>
         <span className="name">{name}</span>
@@ -25,6 +34,10 @@ export default class Device extends React.Component {
           refreshData={this.props.refreshData}
           isdisabled={status}
         />
+        <span className="human">
+          human is : {human ? "present" : "not present"}
+        </span>
+        <span className="temp">current Temp : {ctemp}</span>
         <span className="status">{status ? "ON" : "OFF"}</span>
         <ChangeStatusBtn
           device_id={device_id}
