@@ -57,9 +57,9 @@ class Login extends React.Component {
                 return (
                   <form onSubmit={handleSubmit}>
                     <input
-                      type="email"
+                      type="text"
                       name="email"
-                      placeholder="Email"
+                      placeholder="Email or Username"
                       onChange={handleChange}
                       value={values.email}
                     />

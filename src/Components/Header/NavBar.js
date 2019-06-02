@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import client from "../../apollo";
 
 const LOGOUT = gql`
   mutation {
@@ -32,6 +33,7 @@ class NavBar extends React.Component {
                       onClick={async () => {
                         const response = await logout();
                         if (response.data.logout) {
+                          client.resetStore();
                           this.props.history.push("/Register");
                         }
                       }}

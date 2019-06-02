@@ -3,6 +3,7 @@ import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 import { Formik } from "formik";
 import { withRouter } from "react-router-dom";
+import client from "../../apollo";
 
 const REGISTER_MUT = gql`
   mutation registermutation(
@@ -44,6 +45,7 @@ class Register extends React.Component {
                     });
                   } else {
                     console.log("inside props= ");
+                    client.resetStore();
                     this.props.history.push("/Login");
                   }
                   setSubmitting(false);
