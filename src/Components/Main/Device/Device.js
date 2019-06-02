@@ -3,11 +3,11 @@ import { ChangeStatusBtn } from "./ChangeStatusBtn";
 import { IncreaseTemp } from "./IncreaseTemp";
 import { DecreaseTemp } from "./DecreaseTemp";
 import { RemoveDevice } from "./RemoveDevice";
-import { AddDevice } from "./AddDevice";
+// import { AddDevice } from "./AddDevice";
 
 export default class Device extends React.Component {
   render() {
-    console.log("device component = " + this.props.device);
+    // console.log("device component = " + this.props.device);
     const { id, name, status, device_id, temp } = this.props.device;
     return (
       <div className="device" key={id}>

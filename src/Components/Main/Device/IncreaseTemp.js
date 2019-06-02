@@ -19,7 +19,7 @@ export const IncreaseTemp = props => {
         return (
           <button
             onClick={async () => {
-              const res = await plustemp({
+              await plustemp({
                 variables: {
                   device_id: props.device_id
                 }

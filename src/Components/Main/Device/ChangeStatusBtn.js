@@ -19,7 +19,7 @@ export const ChangeStatusBtn = props => {
         return (
           <button
             onClick={async () => {
-              const response = await status_mutate({
+              await status_mutate({
                 variables: { device_id: props.device_id }
               });
               props.refreshData();

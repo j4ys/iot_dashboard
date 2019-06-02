@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 import Device from "./Device/Device";
@@ -29,7 +29,7 @@ class Devices extends React.Component {
           if (loading) {
             return <p>LOADING</p>;
           }
-          console.log(data);
+          // console.log(data);
           return (
             <div>
               {data.devices.map(d => (

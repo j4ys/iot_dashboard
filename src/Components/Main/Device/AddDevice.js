@@ -17,9 +17,6 @@ const ADD_DEVICE = gql`
 `;
 
 export class AddDevice extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     if (this.props.isAdmin) {
       return (
