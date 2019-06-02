@@ -8,11 +8,12 @@ import { RemoveDevice } from "./RemoveDevice";
 export default class Device extends React.Component {
   render() {
     // console.log("device component = " + this.props.device);
-    const { id, name, status, device_id, temp } = this.props.device;
+    const { id, name, status, device_id, temp, location } = this.props.device;
     return (
       <div className="device" key={id}>
         <span className="name">{name}</span>
         <span className="device_id">{device_id}</span>
+        <span className="location">{location}</span>
         <IncreaseTemp
           device_id={device_id}
           refreshData={this.props.refreshData}

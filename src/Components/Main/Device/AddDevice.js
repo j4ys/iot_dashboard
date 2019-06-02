@@ -8,8 +8,14 @@ const ADD_DEVICE = gql`
     $name: String!
     $device_id: String!
     $status: Boolean!
+    $location: String!
   ) {
-    addDevice(name: $name, device_id: $device_id, status: $status) {
+    addDevice(
+      name: $name
+      device_id: $device_id
+      status: $status
+      location: $location
+    ) {
       path
       message
     }
@@ -26,7 +32,12 @@ export class AddDevice extends React.Component {
               <Formik
                 validateOnBlur={false}
                 validateOnChange={false}
-                initialValues={{ name: "", device_id: "", status: false }}
+                initialValues={{
+                  name: "",
+                  device_id: "",
+                  status: false,
+                  location: ""
+                }}
                 onSubmit={async (data, { setSubmitting, setFieldError }) => {
                   setSubmitting(true);
                   try {
@@ -34,7 +45,8 @@ export class AddDevice extends React.Component {
                       variables: {
                         name: data.name,
                         device_id: data.device_id,
-                        status: data.status === "true" ? true : false
+                        status: data.status === "true" ? true : false,
+                        location: data.location
                       }
                     });
                     if (res.data.addDevice) {
@@ -80,6 +92,15 @@ export class AddDevice extends React.Component {
                         placeholder="Device Id"
                       />
                       {errors.device_id}
+                      <input
+                        type="text"
+                        name="location"
+                        id="location"
+                        onChange={handleChange}
+                        value={values.location}
+                        placeholder="Location"
+                      />
+                      {errors.location}
                       <span>
                         <label>ON</label>
                         <input

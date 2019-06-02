@@ -13,6 +13,7 @@ const device_q = gql`
       name
       status
       temp
+      location
     }
     isAdmin
   }
