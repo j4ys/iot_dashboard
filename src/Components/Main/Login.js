@@ -3,6 +3,8 @@ import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 import { Formik } from "formik";
 import { withRouter } from "react-router-dom";
+import { Query } from "react-apollo";
+import { Redirect, Link } from "react-router-dom";
 
 const LOGIN_MUT = gql`
   mutation LoginMut($email: String!, $password: String!) {
@@ -15,6 +17,14 @@ const LOGIN_MUT = gql`
 `;
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.openSideBar();
+  }
+
   render() {
     return (
       <Mutation mutation={LOGIN_MUT}>
@@ -38,7 +48,9 @@ class Login extends React.Component {
                     console.log(response);
                     this.props.history.push("/Devices");
                   } else {
-                    setErrors({ login: "incorrect username or password" });
+                    setErrors({
+                      login: "incorrect username or password"
+                    });
                   }
                 } catch (err) {
                   console.log(err);
@@ -55,24 +67,43 @@ class Login extends React.Component {
                 isSubmitting
               }) => {
                 return (
-                  <form onSubmit={handleSubmit}>
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="Email or Username"
-                      onChange={handleChange}
-                      value={values.email}
-                    />
-                    <input
-                      type="password"
-                      name="password"
-                      onChange={handleChange}
-                      placeholder="Password"
-                    />
-                    {errors.login}
-                    <button type="submit" disabled={isSubmitting}>
-                      Login
-                    </button>
+                  <form
+                    onSubmit={handleSubmit}
+                    autoComplete="off"
+                    className="reg-login-form"
+                  >
+                    <fieldset>
+                      <legend>LOGIN</legend>
+                      <div className="form-field">
+                        <input
+                          type="text"
+                          name="email"
+                          id="email"
+                          onChange={handleChange}
+                          value={values.email}
+                        />
+                        <label htmlFor="email">Email or Username</label>
+                      </div>
+                      <div className="form-field">
+                        <input
+                          type="password"
+                          name="password"
+                          onChange={handleChange}
+                          id="password"
+                        />
+                        <label htmlFor="password">Password</label>
+                        <span className="error">{errors.login}</span>
+                      </div>
+                      <div className="form-field field-btn">
+                        <span>
+                          Don't have an account
+                          <Link to="/Register">Sign-up</Link>
+                        </span>
+                        <button type="submit" disabled={isSubmitting}>
+                          Login
+                        </button>
+                      </div>
+                    </fieldset>
                   </form>
                 );
               }}

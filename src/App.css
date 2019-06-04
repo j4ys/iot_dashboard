@@ -1,9 +1,15 @@
+element {
+  --yellow: #ffdc25;
+  --dark-blue: #07101d;
+  --white: #ffffff;
+  --dark-white: #8c8c8c;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
-ul {
+/* ul {
   list-style: none;
   display: inline;
 }
@@ -15,4 +21,156 @@ li {
 .device {
   display: flex;
   justify-content: space-between;
+  justify-items: center;
+} */
+
+.App {
+  position: relative;
+}
+
+.topbar {
+  background-color: #ffdc25;
+  padding: 20px;
+  padding-bottom: 10px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  box-sizing: border-box;
+  align-content: center;
+  /* height: 50px; */
+  z-index: 10000;
+}
+
+.logo {
+  width: 400px;
+  display: flex;
+}
+.logo-img {
+  margin-right: 5px;
+}
+
+.logo-img-dark {
+  height: 5rem;
+  width: 13rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  background-color: #07101d;
+  position: relative;
+  width: 400px;
+  height: 60px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 3px 3px 0 0;
+}
+
+.logo-text-small {
+  font-family: Roboto;
+  color: white;
+  font-size: 13px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logo-text-big {
+  font-family: Roboto;
+  color: #ffdc25;
+  font-size: 40px;
+  font-weight: 900;
+  position: absolute;
+  bottom: -12px;
+  left: 10px;
+}
+
+.ham {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.line {
+  height: 10px;
+  background-color: #07101d;
+  width: 50px;
+  display: block;
+  transition: 1s;
+}
+
+.line-top {
+  transform-origin: right;
+}
+
+.line-bottom {
+  transform-origin: right;
+}
+.line-mid {
+  opacity: 1;
+}
+
+.isopen .line-top {
+  transform: rotate(-45deg);
+  width: 55px;
+}
+
+.isopen .line-bottom {
+  transform: rotate(45deg);
+  width: 55px;
+}
+
+.isopen .line-mid {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 400px;
+  }
+
+  .logo-img-dark {
+    height: 40px;
+    width: 120px;
+  }
+
+  .logo-text {
+    width: 100px;
+    height: 35px;
+  }
+
+  .logo-text-small {
+    top: 8px;
+    font-size: 6px;
+  }
+
+  .logo-text-big {
+    font-size: 20px;
+    bottom: -6px;
+  }
+
+  .ham {
+    width: 30px;
+    height: 30px;
+  }
+
+  .line {
+    width: 30px;
+    height: 5px;
+  }
+
+  .isopen .line-top {
+    transform: rotate(-45deg);
+    width: 35px;
+  }
+
+  .isopen .line-bottom {
+    transform: rotate(45deg);
+    width: 35px;
+  }
 }

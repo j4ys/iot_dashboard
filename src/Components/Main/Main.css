@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap");
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 20px;
+}
+
+.reg-login-form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* align-items: center; */
+  /* border: 1px solid black; */
+  padding: 10px;
+  z-index: 0;
+}
+
+.reg-login-form fieldset {
+  border: 5px solid white;
+}
+
+.reg-login-form fieldset legend {
+  height: 40px;
+  width: 150px;
+  line-height: 40px;
+  padding: 0 25px;
+  font-family: Roboto;
+  font-weight: 600;
+  background-color: #07101d;
+  color: #ffdc25;
+}
+
+.form-field {
+  position: relative;
+  margin: 40px;
+  width: 400px;
+}
+
+.form-field input {
+  width: 400px;
+  background: rgba(254, 221, 62, 1);
+  font-family: Roboto;
+  font-size: 25px;
+  line-height: 30px;
+  height: 30px;
+  border: none;
+  /* margin: 15px; */
+  padding: 10px 50px;
+  outline: none;
+  /* border: 1px solid black; */
+  /* border: 2px solid #07101d; */
+  border-bottom: 5px solid #07101d;
+  border-radius: 5px;
+  box-sizing: content-box;
+  margin: 0px;
+}
+
+.form-field label {
+  position: absolute;
+  font-family: Roboto;
+  font-size: 20px;
+  color: #07101d;
+  font-weight: 700;
+  bottom: 20px;
+  left: 55px;
+  transition: 0.2s;
+  transition-timing-function: linear;
+  box-sizing: border-box;
+}
+
+.form-field input:focus + label {
+  transform: translate(-25px, -30px);
+  background-color: #07101d;
+  color: white;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.form-field input:focus {
+  /* border-bottom: 5px solid green; */
+}
+
+.field-btn {
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
+}
+
+.field-btn span {
+  align-self: center;
+}
+
+.form-field button {
+  width: 150px;
+  height: 50px;
+  background-color: #07101d;
+  color: #ffdc25;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 600;
+  border: none;
+  /* margin: 5px auto; */
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-family: Roboto;
+  padding-left: 40px;
+  left: 10px;
+  bottom: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .content-container {
+    margin: 0;
+    padding: 5px;
+  }
+  .reg-login-form {
+    width: 300px;
+    padding: 5px;
+  }
+
+  .reg-login-form fieldset {
+    border: 2px solid white;
+  }
+
+  .reg-login-form fieldset legend {
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+  }
+
+  .form-field {
+    margin: 30px;
+    width: 200px;
+  }
+
+  .form-field input {
+    width: 150px;
+  }
+
+  .form-field label {
+    font-size: 15px;
+  }
+}

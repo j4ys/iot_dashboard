@@ -15,7 +15,8 @@ export const RemoveDevice = props => {
       <Mutation mutation={DELETE_DEVICE}>
         {deletedevice => {
           return (
-            <button
+            <span
+              className="device-delete"
               onClick={async () => {
                 const res = await deletedevice({
                   variables: { device_id: props.device_id }
@@ -25,8 +26,8 @@ export const RemoveDevice = props => {
                 }
               }}
             >
-              REMOVE
-            </button>
+              <i className="del-icon material-icons tiny">delete</i>
+            </span>
           );
         }}
       </Mutation>

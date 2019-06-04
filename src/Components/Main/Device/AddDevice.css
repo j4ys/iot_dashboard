@@ -1,0 +1,11 @@
+.adddevice-form form input {
+  height: 20px;
+  width: 300px;
+  margin: 10px auto;
+  border: none;
+  padding: 5px;
+}
+
+.adddevice-form form input[type="radio"] {
+  width: 20px;
+}

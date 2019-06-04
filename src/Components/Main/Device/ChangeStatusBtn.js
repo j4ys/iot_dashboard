@@ -17,7 +17,8 @@ export const ChangeStatusBtn = props => {
     <Mutation mutation={STATUS_MUTATE}>
       {status_mutate => {
         return (
-          <button
+          <span
+            className="power-btn"
             onClick={async () => {
               await status_mutate({
                 variables: { device_id: props.device_id }
@@ -25,8 +26,8 @@ export const ChangeStatusBtn = props => {
               props.refreshData();
             }}
           >
-            Switch Device
-          </button>
+            <i class="large material-icons">power_settings_new</i>
+          </span>
         );
       }}
     </Mutation>

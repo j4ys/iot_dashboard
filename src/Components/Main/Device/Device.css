@@ -1,0 +1,111 @@
+.device {
+  margin: 20px;
+  width: 300px;
+  border: 1px solid black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #07101d;
+  border-radius: 5px;
+  position: relative;
+}
+
+.device-up span {
+  display: block;
+}
+
+.device-name {
+  font-family: Roboto;
+  font-size: 25px;
+  color: #ffdc25;
+  font-weight: 700;
+}
+
+.device-location {
+  font-family: Roboto;
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+
+.device-deviceid {
+  font-family: Roboto;
+  font-size: 15px;
+  color: white;
+  font-weight: 100;
+}
+
+.device-down {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.power-btn {
+  /* font-size: 70px; */
+  color: #ffdc25;
+  margin: 0 10px;
+}
+
+.material-icons {
+  font-size: 60px;
+}
+
+.visuals {
+  position: absolute;
+  display: flex;
+  right: 8px;
+  top: 15px;
+  align-items: center;
+}
+
+.temp-controllers {
+  /* height: 80px; */
+  /* border: 2px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.device-temp {
+  font-size: 55px;
+  font-family: Roboto;
+}
+
+.temp-control {
+  margin: 0 5px;
+}
+
+.device-status {
+  display: block;
+  height: 15px;
+  width: 15px;
+  /* background-color: red; */
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.status-on {
+  background-color: green;
+}
+
+.status-off {
+  background-color: red;
+}
+
+.device-ctemp {
+  color: white;
+  font-weight: 300;
+  margin: 5px;
+}
+
+.del-icon {
+  font-size: 20px;
+  color: red;
+}
+
+/* .temp-minus {
+  border-top: 2px solid white;
+}
+.temp-plus {
+  border-bottom: 2px solid white;
+} */

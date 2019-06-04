@@ -1,0 +1,9 @@
+.page-container {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.devices-container {
+  display: flex;
+  flex-wrap: wrap;
+}

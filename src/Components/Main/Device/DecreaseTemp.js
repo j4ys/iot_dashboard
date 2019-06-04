@@ -17,7 +17,8 @@ export const DecreaseTemp = props => {
     <Mutation mutation={PLUS_TEMP}>
       {minustemp => {
         return (
-          <button
+          <span
+            className="temp-control temp-minus"
             onClick={async () => {
               await minustemp({
                 variables: {
@@ -28,8 +29,8 @@ export const DecreaseTemp = props => {
             }}
             disabled={!props.isdisabled}
           >
-            -
-          </button>
+            <i className="large material-icons">arrow_drop_down</i>
+          </span>
         );
       }}
     </Mutation>

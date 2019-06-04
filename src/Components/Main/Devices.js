@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 import Device from "./Device/Device";
 import { AddDevice } from "./Device/AddDevice";
+import "./Devices.css";
 
 const device_q = gql`
   {
@@ -34,16 +35,18 @@ class Devices extends React.Component {
           }
           // console.log(data);
           return (
-            <div>
-              {data.devices.map(d => (
-                <Device
-                  key={d.id}
-                  device={d}
-                  refreshData={refetch}
-                  isAdmin={data.isAdmin}
-                />
-              ))}
+            <div className="page-container">
               <AddDevice isAdmin={data.isAdmin} refreshData={refetch} />
+              <div className="devices-container">
+                {data.devices.map(d => (
+                  <Device
+                    key={d.id}
+                    device={d}
+                    refreshData={refetch}
+                    isAdmin={data.isAdmin}
+                  />
+                ))}
+              </div>
             </div>
           );
         }}

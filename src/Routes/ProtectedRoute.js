@@ -6,10 +6,14 @@ import isAuthenticated from "../utils/Auth";
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   const [data, setData] = useState({ loading: true, valid: false });
   useEffect(() => {
-    isAuthenticated().then(valid => {
-      console.log("valid  = " + valid);
-      setData({ loading: false, valid });
-    });
+    try {
+      isAuthenticated().then(valid => {
+        console.log("valid  = " + valid);
+        setData({ loading: false, valid });
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
   return (
     <Route
