@@ -42,6 +42,19 @@ class Login extends React.Component {
                     variables: {
                       email: data.email,
                       password: data.password
+                    },
+                    update: (cache, { data }) => {
+                      console.log(data);
+                      if (!data || !data.login) {
+                        return;
+                      }
+                      cache.writeQuery({
+                        query: mutate,
+                        data: {
+                          __typename: "User",
+                          me: data.login
+                        }
+                      });
                     }
                   });
                   if (response.data.login) {

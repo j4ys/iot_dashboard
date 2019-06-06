@@ -9,7 +9,11 @@ import gql from "graphql-tag";
 
 const ME = gql`
   {
-    me
+    me {
+      id
+      username
+      email
+    }
   }
 `;
 
@@ -45,11 +49,20 @@ class App extends React.Component {
     return (
       <Query query={ME}>
         {({ data, loading, err }) => {
+          console.log(data);
           if (loading) {
             return <p>LOADING</p>;
           }
           if (err) {
             return null;
+          }
+          let loggedin = false;
+          if (!data || !data.me) {
+            loggedin = false;
+          } else {
+            if (data.me) {
+              loggedin = true;
+            }
           }
           return (
             <Router>
@@ -60,10 +73,10 @@ class App extends React.Component {
                 />
                 <NavBar
                   isopen={this.state.isopen}
-                  isloggedIn={data.me}
+                  isloggedIn={loggedin}
                   openSideBar={this.openSideBar}
                 />
-                <Routes isloggedIn={data.me} openSideBar={this.closeSideBar} />
+                <Routes isloggedIn={loggedin} openSideBar={this.closeSideBar} />
               </div>
             </Router>
           );

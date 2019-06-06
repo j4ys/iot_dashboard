@@ -17,20 +17,31 @@ export const DecreaseTemp = props => {
     <Mutation mutation={PLUS_TEMP}>
       {minustemp => {
         return (
-          <span
+          <button
+            id="dectemp"
             className="temp-control temp-minus"
             onClick={async () => {
-              await minustemp({
-                variables: {
-                  device_id: props.device_id
+              let decbtn = document.getElementById("dectemp");
+              if (!decbtn.disabled) {
+                decbtn.disabled = true;
+                setTimeout(() => {
+                  decbtn.disabled = false;
+                }, 2000);
+                if (!props.isdisabled) {
+                } else {
+                  await minustemp({
+                    variables: {
+                      device_id: props.device_id
+                    }
+                  });
+                  props.refreshData();
                 }
-              });
-              props.refreshData();
+              }
             }}
             disabled={!props.isdisabled}
           >
             <i className="large material-icons">arrow_drop_down</i>
-          </span>
+          </button>
         );
       }}
     </Mutation>

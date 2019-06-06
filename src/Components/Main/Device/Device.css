@@ -43,6 +43,8 @@
 
 .power-btn {
   /* font-size: 70px; */
+  background-color: transparent;
+  border: none;
   color: #ffdc25;
   margin: 0 10px;
 }
@@ -73,6 +75,9 @@
 
 .temp-control {
   margin: 0 5px;
+  border: none;
+  color: #ffdc25;
+  background: transparent;
 }
 
 .device-status {

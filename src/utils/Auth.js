@@ -6,7 +6,11 @@ const isAuthenticated = async () => {
   const res = await client.query({
     query: gql`
       {
-        me
+        me {
+          id
+          username
+          email
+        }
       }
     `
   });
