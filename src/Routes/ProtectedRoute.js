@@ -8,23 +8,23 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
   useEffect(() => {
     try {
       isAuthenticated().then(valid => {
-        console.log("valid  = " + valid);
+        // console.log("valid  = " + valid);
         setData({ loading: false, valid });
       });
     } catch (err) {
       console.log(err);
     }
   }, []);
-  console.log(`rest = ${Object.keys(rest)}`);
+  // console.log(`rest = ${Object.keys(rest)}`);
   return (
     <Provider.Consumer>
       {context => {
-        console.log(context);
+        // console.log(context);
         return (
           <Route
             {...rest}
             render={props => {
-              console.log(props);
+              // console.log(props);
               if (data.loading) {
                 return <p>loading...</p>;
               } else if (data.valid) {

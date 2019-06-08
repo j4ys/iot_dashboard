@@ -9,7 +9,7 @@ const SYNC_DEVICES = gql`
 `;
 
 export const SyncAllDevices = props => {
-  console.log(typeof props.temp);
+  // console.log(typeof props.temp);
   return (
     <Mutation mutation={SYNC_DEVICES}>
       {syncdevices => {

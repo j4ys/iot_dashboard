@@ -51,7 +51,6 @@ class App extends React.Component {
     return (
       <Query query={ME}>
         {({ data, loading, err }) => {
-          console.log(data);
           if (loading) {
             return <p>LOADING</p>;
           }

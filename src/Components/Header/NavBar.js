@@ -14,7 +14,7 @@ const LOGOUT = gql`
 class NavBar extends React.Component {
   render() {
     const sidebarclass = `navbar ${this.props.isopen ? "sidebar-open" : ""}`;
-    console.log(this.props.isloggedIn);
+    // console.log(this.props.isloggedIn);
     {
       if (this.props.isloggedIn) {
         return (

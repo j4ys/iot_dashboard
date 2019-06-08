@@ -53,7 +53,7 @@ export class AddDevice extends React.Component {
                       });
                       if (res.data.addDevice) {
                         res.data.addDevice.map(er => {
-                          console.log(er);
+                          // console.log(er);
                           return setFieldError(er.path, er.message);
                         });
                       } else {
@@ -74,7 +74,7 @@ export class AddDevice extends React.Component {
                     handleChange,
                     isSubmitting
                   }) => {
-                    console.log(errors);
+                    // console.log(errors);
                     return (
                       <form onSubmit={handleSubmit} autoComplete="off">
                         <div className="adddevice-field">
