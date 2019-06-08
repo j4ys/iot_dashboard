@@ -7,6 +7,8 @@ import { TopBar } from "./Components/Header/Header";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
+export const Provider = React.createContext();
+
 const ME = gql`
   {
     me {
@@ -76,7 +78,14 @@ class App extends React.Component {
                   isloggedIn={loggedin}
                   openSideBar={this.openSideBar}
                 />
-                <Routes isloggedIn={loggedin} openSideBar={this.closeSideBar} />
+                <Provider.Provider value={this.closeSideBar}>
+                  <Routes
+                    isloggedIn={loggedin}
+                    openSideBar={this.closeSideBar}
+                    closeSideBar={this.closeSideBar}
+                    toggleSideBar={this.toggleSideBar}
+                  />
+                </Provider.Provider>
               </div>
             </Router>
           );

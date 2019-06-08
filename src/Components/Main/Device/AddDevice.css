@@ -1,11 +1,32 @@
-.adddevice-form form input {
-  height: 20px;
+.adddevice-form {
   width: 300px;
-  margin: 10px auto;
-  border: none;
-  padding: 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.adddevice-form form input[type="radio"] {
-  width: 20px;
+.adddevice-form form input,
+.adddevice-form form button[type="submit"] {
+  height: 20px;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.adddevice-form form button[type="submit"] {
+  background: #07101d;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40px;
+  width: 270px;
+}
+
+.derror {
+  color: red;
+  padding: 10px;
+  font-family: Roboto;
+  font-weight: 400;
 }

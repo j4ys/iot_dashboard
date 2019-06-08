@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { Route } from "react-router-dom";
 import isAuthenticated from "../utils/Auth";
-
+import { Provider } from "../App";
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   const [data, setData] = useState({ loading: true, valid: false });
   useEffect(() => {
@@ -15,18 +15,27 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
       console.log(err);
     }
   }, []);
+  console.log(`rest = ${Object.keys(rest)}`);
   return (
-    <Route
-      {...rest}
-      render={props => {
-        if (data.loading) {
-          return <p>loading...</p>;
-        } else if (data.valid) {
-          return <Component {...props} />;
-        } else {
-          return <Redirect to="/Login" />;
-        }
+    <Provider.Consumer>
+      {context => {
+        console.log(context);
+        return (
+          <Route
+            {...rest}
+            render={props => {
+              console.log(props);
+              if (data.loading) {
+                return <p>loading...</p>;
+              } else if (data.valid) {
+                return <Component {...props} closeSideBar={context} />;
+              } else {
+                return <Redirect to="/Login" />;
+              }
+            }}
+          />
+        );
       }}
-    />
+    </Provider.Consumer>
   );
 };

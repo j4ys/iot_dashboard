@@ -101,7 +101,7 @@ li {
   background-color: #07101d;
   width: 50px;
   display: block;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .line-top {

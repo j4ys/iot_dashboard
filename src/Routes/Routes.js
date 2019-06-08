@@ -16,6 +16,11 @@ class Routes extends React.Component {
         <div className="container">
           <Switch>
             <Route
+              path="/"
+              exact
+              render={routeprops => <Login {...routeprops} {...this.props} />}
+            />
+            <Route
               path="/Register"
               render={routeprops => (
                 <Register {...routeprops} {...this.props} />
@@ -25,7 +30,11 @@ class Routes extends React.Component {
               path="/Login"
               render={routeprops => <Login {...routeprops} {...this.props} />}
             />
-            <ProtectedRoute path="/Devices" component={Devices} />
+            <ProtectedRoute
+              path="/Devices"
+              component={Devices}
+              {...this.props}
+            />
           </Switch>
         </div>
       );

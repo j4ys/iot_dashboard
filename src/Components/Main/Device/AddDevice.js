@@ -74,8 +74,9 @@ export class AddDevice extends React.Component {
                     handleChange,
                     isSubmitting
                   }) => {
+                    console.log(errors);
                     return (
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} autoComplete="off">
                         <div className="adddevice-field">
                           <input
                             type="text"
@@ -85,7 +86,7 @@ export class AddDevice extends React.Component {
                             value={values.name}
                             placeholder="Name"
                           />
-                          {errors.name}
+                          <span className="derror">{errors.name}</span>
                         </div>
                         <div className="adddevice-field">
                           <input
@@ -96,7 +97,7 @@ export class AddDevice extends React.Component {
                             value={values.device_id}
                             placeholder="Device Id"
                           />
-                          {errors.device_id}
+                          <span className="derror">{errors.device_id}</span>
                         </div>
                         <div className="adddevice-field">
                           <input
@@ -107,29 +108,7 @@ export class AddDevice extends React.Component {
                             value={values.location}
                             placeholder="Location"
                           />
-                          {errors.location}
-                        </div>
-                        <div className="adddevice-field">
-                          <span>
-                            <label>ON</label>
-                            <input
-                              type="radio"
-                              name="status"
-                              value="true"
-                              onChange={handleChange}
-                            />
-                          </span>
-                          <span>
-                            <label htmlFor="">OFF</label>
-                            <input
-                              type="radio"
-                              name="status"
-                              value="false"
-                              onChange={handleChange}
-                              checked
-                            />
-                          </span>
-                          {errors.status}
+                          <span className="derror">{errors.location}</span>
                         </div>
                         <button type="submit" disabled={isSubmitting}>
                           AddDevice

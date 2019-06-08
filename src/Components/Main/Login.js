@@ -49,7 +49,16 @@ class Login extends React.Component {
                         return;
                       }
                       cache.writeQuery({
-                        query: mutate,
+                        query: gql`
+                          {
+                            me {
+                              id
+                              username
+                              email
+                              isadmin
+                            }
+                          }
+                        `,
                         data: {
                           __typename: "User",
                           me: data.login
@@ -59,6 +68,7 @@ class Login extends React.Component {
                   });
                   if (response.data.login) {
                     console.log(response);
+                    console.log("redirecting to /Devices");
                     this.props.history.push("/Devices");
                   } else {
                     setErrors({

@@ -5,6 +5,7 @@ import { gql } from "apollo-boost";
 import Device from "./Device/Device";
 import { AddDevice } from "./Device/AddDevice";
 import "./Devices.css";
+import { Provider } from "../../App";
 
 const device_q = gql`
   {
@@ -23,6 +24,9 @@ const device_q = gql`
 `;
 
 class Devices extends React.Component {
+  componentDidMount() {
+    this.props.closeSideBar();
+  }
   render() {
     return (
       <Query query={device_q} pollInterval={500}>

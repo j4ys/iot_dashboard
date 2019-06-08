@@ -2,9 +2,8 @@ import React from "react";
 import { ChangeStatusBtn } from "./ChangeStatusBtn";
 import { IncreaseTemp } from "./IncreaseTemp";
 import { DecreaseTemp } from "./DecreaseTemp";
-import { RemoveDevice } from "./RemoveDevice";
+import { SyncAllDevices } from "./SyncAllDevices";
 import "./Device.css";
-// import { AddDevice } from "./AddDevice";
 
 export default class Device extends React.Component {
   render() {
@@ -55,11 +54,7 @@ export default class Device extends React.Component {
           </span>
           <span className="device-ctemp">{ctemp}&deg;C</span>
           <span className={statusclass} />
-          <RemoveDevice
-            device_id={device_id}
-            isAdmin={this.props.isAdmin}
-            refreshData={this.props.refreshData}
-          />
+          <SyncAllDevices temp={temp} refreshData={this.props.refreshData} />
         </div>
       </div>
     );
