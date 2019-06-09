@@ -5,7 +5,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     credentials: "include",
-    uri: "https://abyssindia.in/graphql",
+    uri: "https://embryozim.tech/graphql",
     fetchOptions: {
       agent: new https.Agent({ rejectUnauthorized: false })
     }
