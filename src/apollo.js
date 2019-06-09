@@ -4,7 +4,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     credentials: "include",
-    uri: "http://52.66.235.142/graphql"
+    uri: "https://52.66.235.142/graphql"
   })
 });
 
