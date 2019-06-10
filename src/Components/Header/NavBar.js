@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                           variables: { status: true }
                         });
                         if (response.data) {
-                          this.props.openSideBar();
+                          this.props.closeSideBar();
                         }
                       }}
                     >
@@ -76,7 +76,7 @@ class NavBar extends React.Component {
                           variables: { status: false }
                         });
                         if (response.data) {
-                          this.props.openSideBar();
+                          this.props.closeSideBar();
                         }
                       }}
                     >

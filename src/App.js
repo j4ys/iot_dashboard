@@ -76,6 +76,7 @@ class App extends React.Component {
                   isopen={this.state.isopen}
                   isloggedIn={loggedin}
                   openSideBar={this.openSideBar}
+                  closeSideBar={this.closeSideBar}
                 />
                 <Provider.Provider value={this.closeSideBar}>
                   <Routes
