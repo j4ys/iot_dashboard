@@ -11,6 +11,12 @@ const LOGOUT = gql`
   }
 `;
 
+const ALL_STATUS = gql`
+  mutation ChangeAll($status: Boolean!) {
+    publishAllStatus(status: $status)
+  }
+`;
+
 class NavBar extends React.Component {
   render() {
     const sidebarclass = `navbar ${this.props.isopen ? "sidebar-open" : ""}`;
@@ -37,6 +43,42 @@ class NavBar extends React.Component {
                       }}
                     >
                       Logout
+                    </li>
+                  );
+                }}
+              </Mutation>
+              <Mutation mutation={ALL_STATUS}>
+                {allstatus => {
+                  return (
+                    <li
+                      onClick={async () => {
+                        const response = await allstatus({
+                          variables: { status: true }
+                        });
+                        if (response.data) {
+                          this.props.openSideBar();
+                        }
+                      }}
+                    >
+                      Switch ON
+                    </li>
+                  );
+                }}
+              </Mutation>
+              <Mutation mutation={ALL_STATUS}>
+                {allstatus => {
+                  return (
+                    <li
+                      onClick={async () => {
+                        const response = await allstatus({
+                          variables: { status: false }
+                        });
+                        if (response.data) {
+                          this.props.openSideBar();
+                        }
+                      }}
+                    >
+                      Switch OFF
                     </li>
                   );
                 }}
