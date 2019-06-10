@@ -52,6 +52,7 @@ class NavBar extends React.Component {
                   return (
                     <li
                       onClick={async () => {
+                        console.log("all on");
                         const response = await allstatus({
                           variables: { status: true }
                         });
@@ -70,6 +71,7 @@ class NavBar extends React.Component {
                   return (
                     <li
                       onClick={async () => {
+                        console.log("all off ");
                         const response = await allstatus({
                           variables: { status: false }
                         });
