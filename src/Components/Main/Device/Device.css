@@ -60,6 +60,13 @@
   top: 15px;
   align-items: center;
 }
+.visuals2 {
+  position: absolute;
+  display: flex;
+  right: 8px;
+  bottom: 15px;
+  align-items: center;
+}
 
 .temp-controllers {
   /* height: 80px; */

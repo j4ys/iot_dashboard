@@ -50,17 +50,20 @@ export default class Device extends React.Component {
           <span className="device-temp">{temp}&deg; C</span>
         </div>
         <div className="visuals">
-          <span className="human-presence">
-            <img src={humanpresencesrc} alt="human" className="human-icon" />
-          </span>
+          
           <span className="device-ctemp">{ctemp}&deg;C</span>
-          <span className={statusclass} />
           <SyncAllDevices
             temp={temp}
             sync={sync}
             refreshData={this.props.refreshData}
           />
         </div>
+	    <div className="visuals2">
+	   <span className="human-presence">
+            <img src={humanpresencesrc} alt="human" className="human-icon" />
+          </span> 
+          <span className={statusclass} />
+	    </div>
       </div>
     );
   }
