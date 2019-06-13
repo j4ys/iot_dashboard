@@ -54,7 +54,11 @@ export default class Device extends React.Component {
           </span>
           <span className="device-ctemp">{ctemp}&deg;C</span>
           <span className={statusclass} />
-          <SyncAllDevices temp={temp} refreshData={this.props.refreshData} />
+          <SyncAllDevices
+            temp={temp}
+            sync={d.sync}
+            refreshData={this.props.refreshData}
+          />
         </div>
       </div>
     );

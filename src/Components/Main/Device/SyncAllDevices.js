@@ -10,12 +10,13 @@ const SYNC_DEVICES = gql`
 
 export const SyncAllDevices = props => {
   // console.log(typeof props.temp);
+  const classname = `device-delete ${props.sync ? grn - btn : red - btn}`;
   return (
     <Mutation mutation={SYNC_DEVICES}>
       {syncdevices => {
         return (
           <button
-            className="device-delete"
+            className={classname}
             onClick={async () => {
               const res = await syncdevices({
                 variables: { temp: props.temp }

@@ -114,6 +114,12 @@
   outline: none;
 }
 
+.grn-btn {
+  color: green;
+}
+.red-btn {
+  color: red;
+}
 /* .temp-minus {
   border-top: 2px solid white;
 }

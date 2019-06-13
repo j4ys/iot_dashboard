@@ -18,6 +18,7 @@ const device_q = gql`
       location
       ctemp
       human
+      sync
     }
     isAdmin
   }
