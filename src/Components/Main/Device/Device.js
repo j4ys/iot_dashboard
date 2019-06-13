@@ -16,7 +16,8 @@ export default class Device extends React.Component {
       temp,
       location,
       ctemp,
-      human
+      human,
+      sync
     } = this.props.device;
     const humanpresencesrc = `${
       human ? "/assets/humangreen.png" : "/assets/humanred.png"
@@ -56,7 +57,7 @@ export default class Device extends React.Component {
           <span className={statusclass} />
           <SyncAllDevices
             temp={temp}
-            sync={d.sync}
+            sync={sync}
             refreshData={this.props.refreshData}
           />
         </div>
