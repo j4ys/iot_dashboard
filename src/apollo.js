@@ -6,7 +6,7 @@ const client = new ApolloClient({
   link: new HttpLink({
     credentials: "include",
     //uri: "http://172.20.0.61:4000/graphql",
-    uri: "https://13.234.224.208:4000/graphql",
+    uri: "https://embryozim.tech/graphql",
     fetchOptions: {
       agent: new https.Agent({ rejectUnauthorized: false })
     }
