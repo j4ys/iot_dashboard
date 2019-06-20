@@ -20,16 +20,16 @@ export const IncreaseTemp = props => {
           <button
             id="inctemp"
             className="temp-control temp-plus"
-            onClick={async () => {
-              let incbtn = document.getElementById("inctemp");
+            onClick={async (e) => {
+              let incbtn = e.currentTarget;
+
               if (!incbtn.disabled) {
                 incbtn.disabled = true;
                 setTimeout(() => {
                   incbtn.disabled = false;
-                }, 2000);
-                if (!props.isdisabled) {
-                } else {
-                  await plustemp({
+                }, 1500);
+                if (props.isdisabled) {
+                  const rest = await plustemp({
                     variables: {
                       device_id: props.device_id
                     }

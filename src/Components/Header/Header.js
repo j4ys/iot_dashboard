@@ -10,7 +10,7 @@ export const TopBar = props => {
         </span>
         <span className="logo-text">
           <span className="logo-text-small">Powered By</span>
-          <span className="logo-text-big">SBA Labs</span>
+          <span className="logo-text-big">SBA LAB</span>
         </span>
       </div>
       <div

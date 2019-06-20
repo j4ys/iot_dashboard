@@ -20,13 +20,13 @@ export const DecreaseTemp = props => {
           <button
             id="dectemp"
             className="temp-control temp-minus"
-            onClick={async () => {
-              let decbtn = document.getElementById("dectemp");
+            onClick={async (e) => {
+              let decbtn = e.currentTarget;
               if (!decbtn.disabled) {
                 decbtn.disabled = true;
                 setTimeout(() => {
                   decbtn.disabled = false;
-                }, 2000);
+                }, 1500);
                 if (!props.isdisabled) {
                 } else {
                   await minustemp({

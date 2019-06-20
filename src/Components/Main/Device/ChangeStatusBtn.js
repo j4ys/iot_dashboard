@@ -19,14 +19,13 @@ export const ChangeStatusBtn = props => {
             id="pwrbtn"
             className="power-btn"
             onClick={async e => {
-              let pwrbtn = document.getElementById("pwrbtn");
+              let pwrbtn = e.currentTarget;
 
-              console.log(pwrbtn.disabled);
               if (!pwrbtn.disabled) {
                 pwrbtn.disabled = true;
                 setTimeout(() => {
                   pwrbtn.disabled = false;
-                }, 2000);
+                }, 1500);
                 await status_mutate({
                   variables: { device_id: props.device_id }
                 });
