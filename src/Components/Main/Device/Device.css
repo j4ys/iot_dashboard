@@ -85,6 +85,12 @@
   border: none;
   color: #ffdc25;
   background: transparent;
+  cursor: pointer;
+}
+
+.temp-control[disabled] {
+  opacity: 0.3;
+  cursor: auto;
 }
 
 .device-status {
